@@ -6,6 +6,11 @@
 - 建立虛擬環境
 - 執行app(account)
 - 建立分頁 views urls
+- 建立獨立urls
+
+> 2022.10.17
+- html模板繼承
+- 利用Bootstrap建立模板
 
 ## 筆記
 > 安裝虛擬環境
@@ -17,12 +22,20 @@
 > 開始專案
 - 開始:django-admin startproject (project name)
 - 新增 app:python manage.py startapp (app name)
--
+
+> 建立獨立urls
+- project/urls.py:path('', include('apps.urls')),
+- app/urls.py:from . import views -> path('', views.home, name='home'),
+
+> Bootstrap
+- html:https://getbootstrap.com/docs/4.0/components/navbar/
+- CSS:https://getbootstrap.com/docs/4.0/getting-started/introduction/
 
 ## 參考資料
 
 > 解決無法開啟 django-admin 教學:
 - https://www.youtube.com/watch?v=ezSGmWk9KA0&ab_channel=urpointofview
+
 
 ## Github
 
