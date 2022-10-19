@@ -12,6 +12,12 @@
 - html模板繼承
 - 利用Bootstrap建立模板
 
+> 2022.10.19
+- static:靜態資料夾 (CSS、JS、Images)
+- 建立資料庫 & 超級使用者
+
+
+
 ## 筆記
 > 安裝虛擬環境
 - 安裝:pip install virtualenv
@@ -30,6 +36,36 @@
 > Bootstrap
 - html:https://getbootstrap.com/docs/4.0/components/navbar/
 - CSS:https://getbootstrap.com/docs/4.0/getting-started/introduction/
+
+> 靜態資料夾
+- settings:
+
+    - import os
+
+    - STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+    ]
+
+    MEDIA_URL = 'images/' 
+
+- html:{% load static %}  
+
+    - < link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}" >
+
+> 資料庫建立
+- 啟動同步:python manage.py migrate
+- 修改/更新資料庫:python manage.py makemigrations (每次新增/更新時都要做一次)
+- 建立超級使用者:python manage.py createsuperuser
+- 註冊資料庫:admin.py
+
+    - from .models import *
+
+    - admin.site.register(classname)
+
+
+
+
+
 
 ## 參考資料
 

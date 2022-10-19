@@ -105,9 +105,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# 變更語系&時區
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-Hant'
+
+TIME_ZONE = 'Asia/Taipei'
 
 USE_I18N = True
 
@@ -117,7 +119,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+import os
+
 STATIC_URL = 'static/'
+
+# 圖片檔案資料夾
+MEDIA_URL = 'images/' 
+
+# 加入靜態資料夾
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
