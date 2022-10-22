@@ -16,6 +16,13 @@
 - static:靜態資料夾 (CSS、JS、Images)
 - 建立資料庫 & 超級使用者
 
+> 2022.10.22
+- 資料庫查詢&渲染網頁
+- 分頁連結 urls.py:name=""->用name做呼叫{% url 'home' %}
+- 建立表單
+- 站內搜尋功能
+- 會員註冊/登入功能
+
 
 
 ## 筆記
@@ -61,6 +68,29 @@
     - from .models import *
 
     - admin.site.register(classname)
+
+> 資料庫查詢
+- 變數:ModelName.ModelObjects.Method() -> all(),get(),filter(),exclude()
+
+> 客戶獨立頁面
+- 變更urls.py:
+
+    path('customer/<str:pk_test>/', views.customer),
+
+> 建立表單
+- 建立form.py檔案:
+
+    - from django.forms import ModelForm
+
+> 站內搜尋功能
+- 安裝:pip install django-filter
+- settings.py:INSTALLED_APPS=['django_filters']
+- 新增filters.py
+
+> 註冊&登入
+- django內建註冊表單:
+
+    - from django.contrib.auth.forms import UserCreationForm
 
 
 
