@@ -92,6 +92,10 @@
 
     - from django.contrib.auth.forms import UserCreationForm
 
+- Registration Form Template: https://jsfiddle.net/ivanov11/hzf0jxLg/
+
+- Login Form Template: https://jsfiddle.net/ivanov11/dghm5cu7/
+
 
 
 
