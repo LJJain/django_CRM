@@ -23,6 +23,11 @@
 - 站內搜尋功能
 - 會員註冊/登入功能
 
+> 2022.10.24
+- 登入裝飾器
+- 使用者分類:使用group功能
+- 使用者頁面:修改資料/上傳照片 功能
+
 
 
 ## 筆記
@@ -91,11 +96,23 @@
 - django內建註冊表單:
 
     - from django.contrib.auth.forms import UserCreationForm
-
 - Registration Form Template: https://jsfiddle.net/ivanov11/hzf0jxLg/
-
 - Login Form Template: https://jsfiddle.net/ivanov11/dghm5cu7/
+- 註冊失敗錯誤訊息資訊:https://docs.djangoproject.com/en/3.0/ref/contrib/messages/#using-messages-in-views-and-templates
+- 登入訊息:anvbar顯示
 
+> 登入裝飾器:限制頁面登入後才可以瀏覽
+- from django.contrib.auth.decorators import login_required
+- @login_required(login_url='login')
+
+> 使用者分類:
+- 新增decorators.py
+- views.py:from .decorators import unauthenticated_user
+    - @unauthenticated_user
+- 登入後台建立group
+
+> 客戶頁面
+-  
 
 
 
