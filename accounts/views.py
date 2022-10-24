@@ -17,25 +17,22 @@ from .decorators import unauthenticated_user, allowed_users, admin_only
 
 @unauthenticated_user
 def registerPage(request):
-    
-    form = CreateUserForm()
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            username = form.cleaned_data.get('username')
-            group = Group.objects.get(name='customer')
-            user.groups.add(group)
-            Customer.objects.create(user=user)
+
+	form = CreateUserForm()
+	if request.method == 'POST':
+		form = CreateUserForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			username = form.cleaned_data.get('username')
 
 
-            messages.success(request, 'Account was created successfully for ' + username)
+			messages.success(request, 'Account was created for ' + username)
 
+			return redirect('login')
+		
 
-            return redirect('login')
-
-    context = {'form':form}
-    return render(request, 'accounts/register.html', context)
+	context = {'form':form}
+	return render(request, 'accounts/register.html', context)
 
 @unauthenticated_user
 def loginPage(request):

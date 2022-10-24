@@ -27,6 +27,7 @@
 - 登入裝飾器
 - 使用者分類:使用group功能
 - 使用者頁面:修改資料/上傳照片 功能
+- 密碼重製功能(email)
 
 
 
@@ -94,11 +95,11 @@
 
 > 註冊&登入
 - django內建註冊表單:
-
     - from django.contrib.auth.forms import UserCreationForm
 - Registration Form Template: https://jsfiddle.net/ivanov11/hzf0jxLg/
 - Login Form Template: https://jsfiddle.net/ivanov11/dghm5cu7/
-- 註冊失敗錯誤訊息資訊:https://docs.djangoproject.com/en/3.0/ref/contrib/messages/#using-messages-in-views-and-templates
+- 註冊失敗錯誤訊息資訊:
+    https://docs.djangoproject.com/en/3.0/ref/contrib/messages/#using-messages-in-views-and-templates
 - 登入訊息:anvbar顯示
 
 > 登入裝飾器:限制頁面登入後才可以瀏覽
@@ -117,6 +118,19 @@
     - settings.py:
         - MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
+> Signal(尚未完全理解)
+- https://www.youtube.com/watch?v=jYzTKcvO0Pk&list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO&index=19&ab_channel=DennisIvy
+
+> 密碼重製
+- 參考文件:
+    https://docs.djangoproject.com/en/3.0/topics/auth/default/#all-authentication-views
+- source:
+    https://github.com/django/django/blob/main/django/contrib/auth/views.py
+- accounts/urls.py:
+    - from django.contrib.auth import views as auth_views
+    - 新增path (最下方備註)
+- settings.py:
+    - #SMTP Configuration 
 
 
 
@@ -125,6 +139,8 @@
 
 > 解決無法開啟 django-admin 教學:
 - https://www.youtube.com/watch?v=ezSGmWk9KA0&ab_channel=urpointofview
+> 解決無法發送驗證信:
+- https://www.youtube.com/watch?v=sCsMfLf1MTg&ab_channel=DjangoMastery
 
 
 ## Github
