@@ -112,7 +112,10 @@
 - 登入後台建立group
 
 > 客戶頁面
--  
+-  上傳照片:
+    - 安裝Pillow:pip install pillow
+    - settings.py:
+        - MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
 

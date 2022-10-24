@@ -127,6 +127,8 @@ STATIC_URL = 'static/'
 # 圖片檔案資料夾
 MEDIA_URL = 'images/' 
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
 # 加入靜態資料夾
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
